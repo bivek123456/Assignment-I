@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Counter</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f8ff;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Message Length Counter</h2>
+
+    <textarea id="msg" oninput="count()"></textarea>
+    <p>Characters: <span id="used">0</span>/100</p>
+    <p>Characters Left: <span id="left">100</span></p>
+
+    <script>
+        function count() {
+            let n = document.getElementById("msg").value.length;
+            document.getElementById("used").innerText = n;
+            document.getElementById("left").innerText = 100 - n;
+        }
+    </script>
+</body>
+
+</html>
